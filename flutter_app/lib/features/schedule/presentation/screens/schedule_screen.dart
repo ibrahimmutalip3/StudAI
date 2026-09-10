@@ -226,7 +226,7 @@ class _LessonRow extends ConsumerWidget {
           TextButton(onPressed: () => Navigator.of(context).pop(), child: Text(l10n.cancel)),
           TextButton(
             onPressed: () {
-              ref.read(lessonDaoProvider).delete(item.lesson.id);
+              ref.read(lessonDaoProvider).deleteById(item.lesson.id);
               Navigator.of(context).pop();
             },
             child: Text(l10n.delete),

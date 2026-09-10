@@ -147,7 +147,7 @@ class _NoteEditorScreenState extends ConsumerState<NoteEditorScreen> {
       if (mounted) context.pop();
       return;
     }
-    await ref.read(noteDaoProvider).delete(widget.noteId!);
+    await ref.read(noteDaoProvider).deleteById(widget.noteId!);
     if (mounted) context.pop();
   }
 

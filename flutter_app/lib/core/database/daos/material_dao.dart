@@ -37,7 +37,7 @@ class MaterialDao extends DatabaseAccessor<AppDatabase>
     return into(studyMaterials).insertOnConflictUpdate(material);
   }
 
-  Future<void> delete(String id) {
+  Future<void> deleteById(String id) {
     return (delete(studyMaterials)..where((t) => t.id.equals(id))).go();
   }
 

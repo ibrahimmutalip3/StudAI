@@ -9,6 +9,7 @@ import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/providers/locale_providers.dart';
 import '../../../../core/database/app_database.dart';
 import '../../../../core/database/daos/homework_dao.dart';
+import '../../../../core/database/tables.dart';
 import '../../../../core/utils/date_utils.dart';
 import '../../../../core/utils/subject_localization.dart';
 import '../../../../core/widgets/common_widgets.dart';
@@ -190,7 +191,7 @@ class _DetailBody extends ConsumerWidget {
           TextButton(onPressed: () => context.pop(), child: Text(l10n.cancel)),
           TextButton(
             onPressed: () {
-              ref.read(homeworkDaoProvider).delete(item.homework.id);
+              ref.read(homeworkDaoProvider).deleteById(item.homework.id);
               context.pop();
               context.pop();
             },

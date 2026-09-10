@@ -85,13 +85,13 @@ class MaterialPreviewCard extends StatelessWidget {
 
   IconData get _icon {
     switch (item.material.type) {
-      case MaterialType.pdf:
+      case StudyMaterialType.pdf:
         return PhosphorIconsRegular.filePdf;
-      case MaterialType.image:
+      case StudyMaterialType.image:
         return PhosphorIconsRegular.image;
-      case MaterialType.note:
+      case StudyMaterialType.note:
         return PhosphorIconsRegular.notePencil;
-      case MaterialType.text:
+      case StudyMaterialType.text:
         return PhosphorIconsRegular.fileText;
     }
   }

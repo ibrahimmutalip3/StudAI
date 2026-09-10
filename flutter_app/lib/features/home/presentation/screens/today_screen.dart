@@ -8,6 +8,7 @@ import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/providers/locale_providers.dart';
 import '../../../../core/database/app_database.dart';
+import '../../../../core/database/tables.dart';
 import '../../../../core/widgets/common_widgets.dart';
 import '../../../../core/widgets/state_views.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';

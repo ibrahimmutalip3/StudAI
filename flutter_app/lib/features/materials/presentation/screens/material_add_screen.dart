@@ -10,6 +10,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../../../core/database/app_database.dart';
 import '../../../../core/database/tables.dart';
 import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/providers/locale_providers.dart';
@@ -29,7 +30,7 @@ class MaterialAddScreen extends ConsumerStatefulWidget {
 
 class _MaterialAddScreenState extends ConsumerState<MaterialAddScreen> {
   _AddStep _step = _AddStep.chooseType;
-  MaterialType _type = MaterialType.text;
+  StudyMaterialType _type = StudyMaterialType.text;
   String? _filePath;
   final _titleController = TextEditingController();
   final _topicController = TextEditingController();
@@ -51,7 +52,7 @@ class _MaterialAddScreenState extends ConsumerState<MaterialAddScreen> {
     if (path == null) return;
     final saved = await _copyIntoAppDir(File(path));
     setState(() {
-      _type = MaterialType.pdf;
+      _type = StudyMaterialType.pdf;
       _filePath = saved;
       _titleController.text = p.basenameWithoutExtension(path);
       _step = _AddStep.details;
@@ -64,7 +65,7 @@ class _MaterialAddScreenState extends ConsumerState<MaterialAddScreen> {
     if (file == null) return;
     final saved = await _copyIntoAppDir(File(file.path));
     setState(() {
-      _type = MaterialType.image;
+      _type = StudyMaterialType.image;
       _filePath = saved;
       _step = _AddStep.details;
     });
@@ -72,7 +73,7 @@ class _MaterialAddScreenState extends ConsumerState<MaterialAddScreen> {
 
   void _chooseText() {
     setState(() {
-      _type = MaterialType.text;
+      _type = StudyMaterialType.text;
       _step = _AddStep.details;
     });
   }
@@ -99,7 +100,7 @@ class _MaterialAddScreenState extends ConsumerState<MaterialAddScreen> {
         topic: Value(_topicController.text.trim()),
         type: Value(_type),
         filePath: Value(_filePath ?? ''),
-        textContent: Value(_type == MaterialType.text ? _textController.text.trim() : ''),
+        textContent: Value(_type == StudyMaterialType.text ? _textController.text.trim() : ''),
       ),
     );
     if (mounted) context.pop();
@@ -191,7 +192,7 @@ class _TypeOption extends StatelessWidget {
 }
 
 class _DetailsBody extends ConsumerWidget {
-  final MaterialType type;
+  final StudyMaterialType type;
   final String? filePath;
   final TextEditingController titleController;
   final TextEditingController topicController;
@@ -226,12 +227,12 @@ class _DetailsBody extends ConsumerWidget {
         return ListView(
           padding: const EdgeInsets.all(AppSpacing.lg),
           children: [
-            if (type == MaterialType.image && filePath != null)
+            if (type == StudyMaterialType.image && filePath != null)
               ClipRRect(
                 borderRadius: AppRadii.lgRadius,
                 child: Image.file(File(filePath!), height: 160, width: double.infinity, fit: BoxFit.cover),
               ),
-            if (type == MaterialType.pdf && filePath != null)
+            if (type == StudyMaterialType.pdf && filePath != null)
               Container(
                 padding: const EdgeInsets.all(AppSpacing.lg),
                 decoration: BoxDecoration(
@@ -270,7 +271,7 @@ class _DetailsBody extends ConsumerWidget {
               controller: topicController,
               decoration: const InputDecoration(labelText: 'Topic'),
             ),
-            if (type == MaterialType.text) ...[
+            if (type == StudyMaterialType.text) ...[
               const SizedBox(height: AppSpacing.md),
               TextField(
                 controller: textController,

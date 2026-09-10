@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/providers/dao_providers.dart';
 import '../../../core/database/app_database.dart';
 import '../../../core/database/daos/homework_dao.dart';
+import '../../../core/database/tables.dart';
 import '../../../core/utils/date_utils.dart';
 
 enum HomeworkFilter { today, tomorrow, thisWeek, overdue, completed, all }

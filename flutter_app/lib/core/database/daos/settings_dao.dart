@@ -19,8 +19,8 @@ class SettingsDao extends DatabaseAccessor<AppDatabase>
         .getSingle();
   }
 
-  Future<void> update(UserSettingsTableCompanion settings) {
-    return (this.update(userSettingsTable)..where((t) => t.id.equals(0)))
+  Future<void> updateSettings(UserSettingsTableCompanion settings) {
+    return (update(userSettingsTable)..where((t) => t.id.equals(0)))
         .write(settings);
   }
 }

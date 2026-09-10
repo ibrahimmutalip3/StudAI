@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 import '../../../../core/database/app_database.dart';
+import '../../../../core/database/tables.dart';
 import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';

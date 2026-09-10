@@ -5,6 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/database/app_database.dart';
 import '../../../../core/database/daos/homework_dao.dart';
+import '../../../../core/database/tables.dart';
 import '../../../../core/utils/date_utils.dart';
 import '../../../../core/utils/subject_localization.dart';
 import '../../../../core/widgets/common_widgets.dart';

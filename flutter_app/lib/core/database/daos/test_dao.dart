@@ -66,7 +66,7 @@ class TestDao extends DatabaseAccessor<AppDatabase> with _$TestDaoMixin {
     }
   }
 
-  Future<void> delete(String id) async {
+  Future<void> deleteById(String id) async {
     await (delete(testQuestions)..where((t) => t.testId.equals(id))).go();
     await (delete(tests)..where((t) => t.id.equals(id))).go();
   }

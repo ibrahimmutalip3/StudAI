@@ -100,14 +100,14 @@ class Homeworks extends Table {
   Set<Column> get primaryKey => {id};
 }
 
-enum MaterialType { pdf, image, text, note }
+enum StudyMaterialType { pdf, image, text, note }
 
 class StudyMaterials extends Table {
   TextColumn get id => text()();
   TextColumn get title => text()();
   TextColumn get subjectId => text().references(Subjects, #id)();
   TextColumn get topic => text().withDefault(const Constant(''))();
-  TextColumn get type => textEnum<MaterialType>()();
+  TextColumn get type => textEnum<StudyMaterialType>()();
   TextColumn get filePath => text().withDefault(const Constant(''))();
   TextColumn get textContent => text().withDefault(const Constant(''))();
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();

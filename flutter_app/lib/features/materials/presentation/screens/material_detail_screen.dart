@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
+import '../../../../core/database/app_database.dart';
+import '../../../../core/database/daos/material_dao.dart';
 import '../../../../core/database/tables.dart';
 import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/providers/locale_providers.dart';
@@ -96,12 +98,12 @@ class _DetailBody extends ConsumerWidget {
                 Text(item.material.topic, style: textTheme.bodyLarge?.copyWith(color: scheme.onSurfaceVariant)),
               ],
               const SizedBox(height: AppSpacing.lg),
-              if (item.material.type == MaterialType.image && item.material.filePath.isNotEmpty)
+              if (item.material.type == StudyMaterialType.image && item.material.filePath.isNotEmpty)
                 ClipRRect(
                   borderRadius: AppRadii.lgRadius,
                   child: Image.file(File(item.material.filePath), fit: BoxFit.cover),
                 )
-              else if (item.material.type == MaterialType.pdf && item.material.filePath.isNotEmpty)
+              else if (item.material.type == StudyMaterialType.pdf && item.material.filePath.isNotEmpty)
                 Material(
                   color: scheme.surfaceContainerLow,
                   borderRadius: AppRadii.lgRadius,
@@ -274,7 +276,7 @@ class _DetailBody extends ConsumerWidget {
           TextButton(onPressed: () => context.pop(), child: Text(l10n.cancel)),
           TextButton(
             onPressed: () {
-              ref.read(materialDaoProvider).delete(item.material.id);
+              ref.read(materialDaoProvider).deleteById(item.material.id);
               context.pop();
               context.pop();
             },

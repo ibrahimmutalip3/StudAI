@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../providers/dao_providers.dart';
 import '../widgets/app_shell.dart';
+import '../../features/ai_tutor/domain/ai_tutor_launch_args.dart';
+import '../../features/homework/domain/homework_edit_args.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/home/presentation/screens/today_screen.dart';
 import '../../features/homework/presentation/screens/homework_list_screen.dart';

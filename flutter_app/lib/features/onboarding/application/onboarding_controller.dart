@@ -2,6 +2,7 @@ import 'package:drift/drift.dart' show Value;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/database/app_database.dart';
+import '../../../core/database/daos/settings_dao.dart';
 import '../../../core/providers/dao_providers.dart';
 import '../domain/onboarding_step.dart';
 
@@ -55,7 +56,7 @@ class OnboardingController extends StateNotifier<OnboardingState> {
   }
 
   Future<void> completeOnboarding(String gradeLevel) async {
-    await _settingsDao.update(
+    await _settingsDao.updateSettings(
       UserSettingsTableCompanion(
         localeCode: Value(state.localeCode),
         displayName: Value(state.displayName),

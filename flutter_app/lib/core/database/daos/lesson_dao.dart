@@ -34,7 +34,7 @@ class LessonDao extends DatabaseAccessor<AppDatabase> with _$LessonDaoMixin {
     return into(lessons).insertOnConflictUpdate(lesson);
   }
 
-  Future<void> delete(String id) {
+  Future<void> deleteById(String id) {
     return (delete(lessons)..where((t) => t.id.equals(id))).go();
   }
 }

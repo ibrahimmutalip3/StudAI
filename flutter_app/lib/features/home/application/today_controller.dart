@@ -6,6 +6,7 @@ import '../../../core/database/daos/lesson_dao.dart';
 import '../../../core/database/daos/test_dao.dart';
 import '../../../core/database/daos/material_dao.dart';
 import '../../../core/database/app_database.dart';
+import '../../../core/database/tables.dart';
 import '../../../core/utils/date_utils.dart';
 
 /// Aggregated snapshot the Today screen renders from. Kept as a single

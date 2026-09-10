@@ -11,6 +11,7 @@ import '../../../core/ai/prompts/checking_prompts.dart';
 import '../../../core/ai/prompts/simplification_prompts.dart';
 import '../../../core/ai/prompts/test_generation_prompts.dart';
 import '../../../core/ai/parsers/test_generation_parser.dart';
+import '../../../core/database/app_database.dart';
 import '../../../core/database/tables.dart';
 import '../../../core/providers/core_providers.dart';
 import '../../../core/providers/dao_providers.dart';
@@ -157,7 +158,7 @@ class AiTutorController extends StateNotifier<AiTutorState> {
   void retryLast() {
     final lastUser = state.messages.reversed.firstWhere(
       (m) => m.role == ChatRole.user,
-      orElse: () => const ChatMessage(role: ChatRole.user, content: '', timestamp: DateTime.now()),
+      orElse: () => ChatMessage(role: ChatRole.user, content: '', timestamp: DateTime.now()),
     );
     if (lastUser.content.isEmpty) return;
     state = state.copyWith(

@@ -76,7 +76,7 @@ class HomeworkDao extends DatabaseAccessor<AppDatabase>
     );
   }
 
-  Future<void> delete(String id) {
+  Future<void> deleteById(String id) {
     return (delete(homeworks)..where((t) => t.id.equals(id))).go();
   }
 

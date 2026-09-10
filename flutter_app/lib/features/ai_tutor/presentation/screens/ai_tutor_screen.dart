@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:drift/drift.dart' show Value;
 
-import '../../../../core/database/tables.dart';
+import '../../../../core/database/app_database.dart';
 import '../../../../core/providers/core_providers.dart';
 import '../../../../core/providers/dao_providers.dart';
 import '../../../../core/theme/app_tokens.dart';

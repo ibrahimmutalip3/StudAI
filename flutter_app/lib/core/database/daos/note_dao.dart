@@ -29,7 +29,7 @@ class NoteDao extends DatabaseAccessor<AppDatabase> with _$NoteDaoMixin {
     return into(notes).insertOnConflictUpdate(note);
   }
 
-  Future<void> delete(String id) {
+  Future<void> deleteById(String id) {
     return (delete(notes)..where((t) => t.id.equals(id))).go();
   }
 

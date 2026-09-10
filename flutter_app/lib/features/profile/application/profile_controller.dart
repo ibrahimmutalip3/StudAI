@@ -20,25 +20,25 @@ class ProfileController {
   ProfileController(this._ref);
 
   Future<void> updateDisplayName(String name) {
-    return _ref.read(settingsDaoProvider).update(
+    return _ref.read(settingsDaoProvider).updateSettings(
           UserSettingsTableCompanion(displayName: Value(name)),
         );
   }
 
   Future<void> updateGradeLevel(String grade) {
-    return _ref.read(settingsDaoProvider).update(
+    return _ref.read(settingsDaoProvider).updateSettings(
           UserSettingsTableCompanion(gradeLevel: Value(grade)),
         );
   }
 
   Future<void> updateLocale(String localeCode) {
-    return _ref.read(settingsDaoProvider).update(
+    return _ref.read(settingsDaoProvider).updateSettings(
           UserSettingsTableCompanion(localeCode: Value(localeCode)),
         );
   }
 
   Future<void> updateThemeMode(String themeMode) {
-    return _ref.read(settingsDaoProvider).update(
+    return _ref.read(settingsDaoProvider).updateSettings(
           UserSettingsTableCompanion(themeMode: Value(themeMode)),
         );
   }
@@ -54,7 +54,7 @@ class ProfileController {
     if (enabled) {
       await _ref.read(notificationServiceProvider).requestPermission();
     }
-    await _ref.read(settingsDaoProvider).update(
+    await _ref.read(settingsDaoProvider).updateSettings(
           UserSettingsTableCompanion(notificationsEnabled: Value(enabled)),
         );
   }

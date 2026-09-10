@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:drift/drift.dart' show Value;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/database/app_database.dart';
 import '../../../core/database/tables.dart';
 import '../../../core/providers/dao_providers.dart';
 import '../../../core/utils/id_generator.dart';
