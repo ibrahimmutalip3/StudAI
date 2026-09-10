@@ -31,16 +31,26 @@ import '../../features/statistics/presentation/screens/statistics_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
 
-part 'app_router.g.dart';
-
 /// Root navigator key kept outside the shell so full-screen routes
 /// (Focus Mode, homework capture) can push above the bottom nav.
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-@riverpod
-GoRouter appRouter(Ref ref) {
-  final settingsAsync = ref.watch(_onboardingStatusProvider);
+/// NOTE ON CODE GENERATION: these two providers are hand-written (not
+/// `@riverpod`-annotated) on purpose. riverpod_generator's analyzer-based
+/// annotation resolver has a known crash ("Could not resolve annotation
+/// for ...") on very large, deeply-nested top-level functions — and this
+/// file's route tree is exactly that shape. Every other provider in the
+/// app still uses `@riverpod` code generation as normal; this file is the
+/// sole, deliberate exception. Functionally these are identical to what
+/// the generator would have produced.
+final onboardingStatusProvider = StreamProvider<bool>((ref) {
+  final dao = ref.watch(settingsDaoProvider);
+  return dao.watch().map((s) => s.hasCompletedOnboarding);
+});
+
+final appRouterProvider = Provider<GoRouter>((ref) {
+  final settingsAsync = ref.watch(onboardingStatusProvider);
 
   return GoRouter(
     navigatorKey: rootNavigatorKey,
@@ -244,10 +254,4 @@ GoRouter appRouter(Ref ref) {
       ),
     ],
   );
-}
-
-@riverpod
-Stream<bool> _onboardingStatus(Ref ref) {
-  final dao = ref.watch(settingsDaoProvider);
-  return dao.watch().map((s) => s.hasCompletedOnboarding);
-}
+});
