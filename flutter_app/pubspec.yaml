@@ -19,7 +19,7 @@ dependencies:
   go_router: ^14.6.2
 
   # Local database (Drift / SQLite) — see ADR in lib/core/database/tables.dart
-  drift: ^2.22.1
+  drift: ^2.28.1
   sqlite3_flutter_libs: ^0.5.27
   path_provider: ^2.1.5
   path: ^1.9.0
@@ -80,9 +80,9 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
   # Codegen
-  build_runner: ^2.4.13
-  drift_dev: ^2.22.1
-  riverpod_generator: ^2.6.3
+  build_runner: ^2.16.1
+  drift_dev: ^2.28.1
+  riverpod_generator: ^2.6.5
 
   # App icon generation from a single source image (see assets/icons/app_icon_source.png).
   flutter_launcher_icons: ^0.14.3
