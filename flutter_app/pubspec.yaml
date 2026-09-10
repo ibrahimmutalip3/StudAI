@@ -80,16 +80,19 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
   # Codegen
-  # NOTE: build_runner is pinned to the 2.4.x line (not the latest 2.16.x)
-  # because riverpod_generator 2.x (the version matching flutter_riverpod 2.x
-  # used throughout this app) requires package:build ^2.0.0, while
-  # build_runner >=2.15.3 requires package:build ^4.0.9. Bumping
-  # riverpod_generator to 3.x/4.x instead would pull in Riverpod 3, which is
-  # a breaking API change across the whole app — so build_runner is pinned
-  # down rather than riverpod_generator pinned up. Revisit this together
-  # with a full Riverpod 3 migration.
+  # NOTE on version pins: riverpod_generator 2.x (matching flutter_riverpod
+  # 2.x, used throughout this app — moving to 3.x/4.x is a breaking API
+  # change across all 43 files that use Riverpod, so it's out of scope here)
+  # constrains two transitive deps that keep colliding with newer siblings:
+  #   - it needs package:build ^2.0.0, but build_runner >=2.15.3 needs
+  #     package:build ^4.0.9 -> build_runner pinned to the 2.4.x line,
+  #     which still resolves to build ^2.4.x.
+  #   - it needs package:source_gen ^2.0.0, but drift_dev >=2.28.1 needs
+  #     package:source_gen ^3.0.0 -> drift_dev pinned to ^2.28.0, the last
+  #     line still on source_gen 2.x.
+  # Revisit both pins together with a full Riverpod 3 migration.
   build_runner: ^2.4.15
-  drift_dev: ^2.28.1
+  drift_dev: ^2.28.0
   riverpod_generator: ^2.6.5
 
   # App icon generation from a single source image (see assets/icons/app_icon_source.png).
