@@ -1,0 +1,394 @@
+{
+  "@@locale": "ru",
+  "appName": "Учебный помощник",
+  "navToday": "Сегодня",
+  "navHomework": "Задания",
+  "navAiTutor": "AI-репетитор",
+  "navMaterials": "Материалы",
+  "navProfile": "Профиль",
+  "goodMorning": "Доброе утро",
+  "goodAfternoon": "Добрый день",
+  "goodEvening": "Добрый вечер",
+  "todaysOverview": "Обзор дня",
+  "upNext": "Скоро",
+  "homeworkDueToday": "Задания на сегодня",
+  "noLessonsToday": "Сегодня уроков нет",
+  "allCaughtUp": "Все дела выполнены",
+  "addHomework": "Добавить задание",
+  "toReview": "Повторить",
+  "homeworkTitle": "Домашние задания",
+  "filterToday": "Сегодня",
+  "filterTomorrow": "Завтра",
+  "filterThisWeek": "Эта неделя",
+  "filterOverdue": "Просрочено",
+  "filterCompleted": "Выполнено",
+  "filterAll": "Все",
+  "statusPending": "Ожидает",
+  "statusInProgress": "В процессе",
+  "statusCompleted": "Выполнено",
+  "statusOverdue": "Просрочено",
+  "priorityLow": "Низкий",
+  "priorityMedium": "Средний",
+  "priorityHigh": "Высокий",
+  "deadline": "Срок",
+  "noHomeworkYet": "Здесь пока нет заданий",
+  "addHomeworkFromCamera": "Сканировать камерой",
+  "addHomeworkManually": "Добавить вручную",
+  "isThisCorrect": "Всё верно?",
+  "confirmAndSave": "Подтвердить и сохранить",
+  "editBeforeSaving": "Вы можете изменить данные перед сохранением",
+  "recognizing": "Читаем задание…",
+  "aiTutorTitle": "AI-репетитор",
+  "modeExplain": "Объяснить",
+  "modeSolveTogether": "Решить вместе",
+  "modeSolution": "Решение",
+  "modeCheckAnswer": "Проверить ответ",
+  "modeSimplify": "Упростить",
+  "modeGenerateTest": "Создать тест",
+  "askAnything": "Спросите об этом…",
+  "aiThinking": "Думаю…",
+  "aiNotConfigured": "Функции ИИ ещё не настроены для этой сборки.",
+  "aiNotConfiguredBody": "Эта сборка собрана без ключа Gemini API. Попросите того, кто собирал приложение, добавить ключ через секреты GitHub Actions.",
+  "materialsTitle": "Материалы",
+  "notesTitle": "Заметки",
+  "flashcardsTitle": "Флеш-карточки",
+  "testsTitle": "Тесты",
+  "scheduleTitle": "Расписание",
+  "focusModeTitle": "Фокус",
+  "statisticsTitle": "Статистика",
+  "profileTitle": "Профиль",
+  "searchTitle": "Поиск",
+  "searchHint": "Поиск заданий, заметок, материалов…",
+  "noInternetConnection": "Нет подключения к интернету",
+  "tryAgain": "Повторить",
+  "somethingWentWrong": "Что-то пошло не так",
+  "save": "Сохранить",
+  "cancel": "Отмена",
+  "delete": "Удалить",
+  "edit": "Изменить",
+  "done": "Готово",
+  "add": "Добавить",
+  "close": "Закрыть",
+  "retry": "Повторить",
+  "copy": "Копировать",
+  "share": "Поделиться",
+  "settingsLanguage": "Язык",
+  "settingsTheme": "Внешний вид",
+  "settingsNotifications": "Уведомления",
+  "themeSystem": "Системная",
+  "themeLight": "Светлая",
+  "themeDark": "Тёмная",
+  "onboardingWelcomeTitle": "Добро пожаловать в StudAI",
+  "onboardingWelcomeBody": "Ваш личный учебный помощник — домашние задания, заметки, материалы и AI-репетитор, который понимает, над чем вы работаете.",
+  "onboardingLanguageTitle": "Выберите язык",
+  "onboardingLanguageBody": "Вы можете изменить это в любое время в профиле.",
+  "onboardingNameTitle": "Как вас называть?",
+  "onboardingNameHint": "Ваше имя",
+  "onboardingNameBody": "Используется для приветствия на главном экране.",
+  "onboardingGradeTitle": "В каком вы классе?",
+  "onboardingGradeBody": "Помогает AI-репетитору подбирать объяснения под ваш уровень.",
+  "onboardingGradeHint": "например, 9 класс",
+  "onboardingGetStarted": "Начать",
+  "onboardingContinue": "Продолжить",
+  "onboardingSkip": "Пропустить",
+  "onboardingBack": "Назад",
+  "hiName": "Привет, {name}",
+  "@hiName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nextLesson": "Следующий урок",
+  "dueSoon": "Скоро сдавать",
+  "testsAhead": "Предстоящие контрольные",
+  "reviewSuggestion": "Стоит повторить",
+  "continueSession": "Продолжить учёбу",
+  "startFocusSession": "Начать сессию концентрации",
+  "todayEmptyTitle": "На сегодня ничего не запланировано",
+  "todayEmptySubtitle": "Насладитесь свободным временем или займитесь чем-то заранее.",
+  "viewAll": "Смотреть все",
+  "minutesShort": "{count} мин",
+  "@minutesShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dueIn": "Срок через {time}",
+  "@dueIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "overdueBy": "Просрочено на {time}",
+  "@overdueBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "atTime": "в {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "todayUpcomingTests": "Предстоящие контрольные",
+  "todayReviewMaterials": "Материалы для повторения",
+  "addMaterial": "Добавить материал",
+  "chooseMaterialType": "Выберите тип материала",
+  "materialFromPdf": "Из PDF",
+  "materialFromImage": "Из фото",
+  "materialFromText": "Из текста",
+  "materialTitle": "Название",
+  "materialContent": "Содержание",
+  "materialsEmptyTitle": "Пока нет материалов",
+  "materialsEmptySubtitle": "Добавьте конспекты, PDF или фото учебных материалов, чтобы начать",
+  "materialAiSummarize": "Краткое содержание",
+  "materialAiKeyPoints": "Ключевые мысли",
+  "materialAiFindDates": "Найти даты",
+  "materialAiFindFormulas": "Найти формулы",
+  "materialAiQuestions": "Создать вопросы",
+  "materialAiFlashcards": "Создать флеш-карточки",
+  "materialAiTest": "Создать тест",
+  "materialAiAskAboutThis": "Спросить AI об этом",
+  "flashcardsCreated": "{count, plural, one {Создана 1 карточка} few {Создано {count} карточки} many {Создано {count} карточек} other {Создано {count} карточек}}",
+  "openFile": "Открыть файл",
+  "pdfSearch": "Поиск в документе",
+  "pdfFileMissing": "Этот файл не найден на устройстве.",
+  "pdfCouldNotOpen": "Не удалось открыть этот PDF. Возможно, файл повреждён или имеет неподдерживаемый формат.",
+  "generating": "Генерация…",
+  "aiEmptyStateTitle": "Спросите своего AI-репетитора о чём угодно",
+  "aiEmptyStateSubtitle": "Выберите режим ниже и начните разговор о том, что вы изучаете",
+  "aiChooseMode": "Выберите режим",
+  "aiClearChat": "Очистить чат",
+  "aiClearChatConfirm": "Все сообщения в этом разговоре будут удалены. Это действие нельзя отменить.",
+  "aiSendHint": "Задайте вопрос…",
+  "aiCameraAttach": "Прикрепить фото",
+  "modeExplainDesc": "Получите понятное объяснение темы",
+  "modeSolveTogetherDesc": "Решайте задачу вместе, шаг за шагом",
+  "modeSolutionDesc": "Посмотреть полное решение",
+  "modeCheckAnswerDesc": "Проверить свой ответ и разобрать ошибки",
+  "modeSimplifyDesc": "Объяснить сложный текст простыми словами",
+  "modeGenerateTestDesc": "Создать практический тест по теме",
+  "@flashcardsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aiResponseSaved": "Сохранено",
+
+  "notesEmptyTitle": "Пока нет заметок",
+  "notesEmptySubtitle": "Напишите первую заметку или сфотографируйте страницу из конспекта",
+  "addNote": "Добавить заметку",
+  "newNote": "Новая заметка",
+  "noteTitleHint": "Заголовок",
+  "noteContentHint": "Начните писать…",
+  "noteAiStructure": "Структурировать заметку",
+  "noteAiSummarize": "Краткое содержание",
+  "noteAiKeyPoints": "Выделить главное",
+  "noteAiFindDates": "Найти даты",
+  "noteAiFindFormulas": "Найти формулы",
+  "noteAiQuestions": "Создать вопросы",
+  "noteAiFlashcards": "Создать флеш-карточки",
+  "noteFromCamera": "Сфотографировать страницу",
+  "noteAttachImage": "Прикрепить изображение",
+  "applyResult": "Использовать это",
+  "noteSavedJustNow": "Сохранено",
+
+  "flashcardsEmptyTitle": "Пока нет наборов карточек",
+  "flashcardsEmptySubtitle": "Создайте набор вручную или сгенерируйте его из заметки или материала",
+  "newDeck": "Новый набор",
+  "deckTitleHint": "Название набора",
+  "cardFrontHint": "Вопрос",
+  "cardBackHint": "Ответ",
+  "addCard": "Добавить карточку",
+  "cardsCount": "{count, plural, one {1 карточка} few {{count} карточки} many {{count} карточек} other {{count} карточек}}",
+  "@cardsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckEmptyTitle": "В этом наборе пока нет карточек",
+  "studyDeck": "Учить",
+  "flipCard": "Нажмите, чтобы перевернуть",
+  "knewIt": "Знал",
+  "didntKnowIt": "Не знал",
+  "studySessionComplete": "Набор пройден",
+  "studySessionCompleteBody": "Вы повторили {count, plural, one {1 карточку} few {{count} карточки} many {{count} карточек} other {{count} карточек}} за эту сессию.",
+  "@studySessionCompleteBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewAgain": "Повторить снова",
+  "backToDecks": "К наборам",
+  "deleteDeck": "Удалить набор",
+  "generateFromNote": "Из заметки",
+  "generateFromMaterial": "Из материала",
+  "generateFromTopic": "Из темы",
+
+  "testsEmptyTitle": "Пока нет тестов",
+  "testsEmptySubtitle": "Сгенерируйте практический тест с помощью ИИ по любому предмету и теме",
+  "newTest": "Новый тест",
+  "generateTest": "Создать тест",
+  "testSubject": "Предмет",
+  "testTopic": "Тема",
+  "testTopicHint": "например, квадратные уравнения",
+  "testDifficulty": "Сложность",
+  "difficultyEasy": "Лёгкий",
+  "difficultyMedium": "Средний",
+  "difficultyHard": "Сложный",
+  "testQuestionCount": "Количество вопросов",
+  "testQuestionTypes": "Типы вопросов",
+  "typeMultipleChoice": "С вариантами ответа",
+  "typeTrueFalse": "Верно / Неверно",
+  "typeShortAnswer": "Короткий ответ",
+  "generatingTest": "Создаём ваш тест…",
+  "startTest": "Начать тест",
+  "retakeTest": "Пройти снова",
+  "questionOf": "Вопрос {current} из {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "submitAnswer": "Ответить",
+  "nextQuestion": "Далее",
+  "finishTest": "Завершить тест",
+  "yourAnswerHint": "Введите ответ…",
+  "testResultsTitle": "Результаты теста",
+  "testScore": "Правильно {correct} из {total}",
+  "@testScore": {
+    "placeholders": {
+      "correct": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "reviewAnswers": "Посмотреть ответы",
+  "correctAnswerLabel": "Правильный ответ",
+  "yourAnswerLabel": "Ваш ответ",
+  "explanationLabel": "Объяснение",
+  "trueOption": "Верно",
+  "falseOption": "Неверно",
+
+  "scheduleTodayTab": "Сегодня",
+  "scheduleTomorrowTab": "Завтра",
+  "scheduleWeekTab": "Неделя",
+  "scheduleEmptyTitle": "Уроки не добавлены",
+  "scheduleEmptySubtitle": "Добавьте расписание на неделю, чтобы видеть его здесь и на главном экране",
+  "addLesson": "Добавить урок",
+  "editLesson": "Изменить урок",
+  "lessonSubject": "Предмет",
+  "lessonDay": "День",
+  "lessonStartTime": "Начало",
+  "lessonEndTime": "Конец",
+  "lessonRoom": "Кабинет (необязательно)",
+  "lessonTeacher": "Учитель (необязательно)",
+  "monday": "Понедельник",
+  "tuesday": "Вторник",
+  "wednesday": "Среда",
+  "thursday": "Четверг",
+  "friday": "Пятница",
+  "saturday": "Субтота",
+  "sunday": "Воскресенье",
+
+  "focusSetupTitle": "Режим концентрации",
+  "focusChooseHomework": "Над чем вы фокусируетесь?",
+  "focusNoHomeworkOption": "Просто учиться, без конкретного задания",
+  "focusDuration": "Длительность",
+  "focusStart": "Начать фокусировку",
+  "focusPaused": "Пауза",
+  "focusResume": "Продолжить",
+  "focusPause": "Пауза",
+  "focusEnd": "Завершить сессию",
+  "focusEndConfirmTitle": "Завершить сессию концентрации?",
+  "focusEndConfirmBody": "Ваш прогресс будет сохранён.",
+  "focusAiHelp": "Помощь ИИ",
+  "focusSessionSavedTitle": "Отличная работа",
+  "focusSessionSavedBody": "Вы фокусировались {duration}.",
+  "@focusSessionSavedBody": {
+    "placeholders": {
+      "duration": {"type": "String"}
+    }
+  },
+  "focusBackToToday": "Назад к сегодня",
+  "focusMinutes": "{count} мин",
+  "@focusMinutes": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "statsCompletedHomework": "Выполненные задания",
+  "statsOverdueHomework": "Просроченные задания",
+  "statsCompletionRate": "Процент выполнения",
+  "statsStudyTime": "Время учёбы",
+  "statsStudyTimeBySubject": "Время учёбы по предметам",
+  "statsWeekly": "На этой неделе",
+  "statsMonthly": "В этом месяце",
+  "statsMostStudied": "Самые изучаемые предметы",
+  "statsTestsCompleted": "Пройдено тестов",
+  "statsEmptyTitle": "Пока нет учебной активности",
+  "statsEmptySubtitle": "Выполняйте задания, проходите тесты или запускайте сессии концентрации, чтобы увидеть статистику здесь",
+  "statsPeriodWeek": "Неделя",
+  "statsPeriodMonth": "Месяц",
+  "statsPeriodAllTime": "Всё время",
+
+  "profileDisplayName": "Имя",
+  "profileGradeLevel": "Класс",
+  "profileEditDetails": "Изменить данные",
+  "profileAppearance": "Внешний вид",
+  "profileLanguage": "Язык",
+  "profileNotifications": "Уведомления",
+  "profileNotificationsSubtitle": "Сроки заданий, тесты и уроки",
+  "profileStatistics": "Статистика",
+  "profileAbout": "О приложении",
+  "profileAiStatus": "Статус ИИ",
+  "profileAiConfigured": "Подключено к Gemini",
+  "profileAiNotConfigured": "Не настроено для этой сборки",
+  "profileSubjects": "Предметы",
+  "profileManageSubjects": "Управление предметами",
+  "profileAddCustomSubject": "Добавить свой предмет",
+  "profileVersion": "Версия",
+
+  "searchEmptyTitle": "Искать везде",
+  "searchEmptySubtitle": "Задания, заметки, материалы, карточки, тесты и сохранённые ответы ИИ",
+  "searchNoResults": "Ничего не найдено по запросу «{query}»",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {"type": "String"}
+    }
+  },
+  "searchSectionHomework": "Задания",
+  "searchSectionNotes": "Заметки",
+  "searchSectionMaterials": "Материалы",
+  "searchSectionFlashcards": "Наборы карточек",
+  "searchSectionTests": "Тесты",
+  "searchSectionSaved": "Сохранённые ответы ИИ",
+
+  "voiceListening": "Слушаю…",
+  "voiceNotAvailable": "Голосовой ввод недоступен на этом устройстве.",
+  "speak": "Произнесите ответ",
+
+  "confirmDeleteTitle": "Удалить это?",
+  "confirmDeleteBody": "Это действие нельзя отменить.",
+  "untitled": "Без названия",
+  "noSubject": "Без предмета",
+  "loadingEllipsis": "Загрузка…"
+}

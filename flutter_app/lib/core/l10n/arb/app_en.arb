@@ -1,0 +1,394 @@
+{
+  "@@locale": "en",
+  "appName": "Study Assistant",
+  "navToday": "Today",
+  "navHomework": "Homework",
+  "navAiTutor": "AI Tutor",
+  "navMaterials": "Materials",
+  "navProfile": "Profile",
+  "goodMorning": "Good morning",
+  "goodAfternoon": "Good afternoon",
+  "goodEvening": "Good evening",
+  "todaysOverview": "Today's overview",
+  "upNext": "Up next",
+  "homeworkDueToday": "Homework due today",
+  "noLessonsToday": "No lessons scheduled today",
+  "allCaughtUp": "You're all caught up",
+  "addHomework": "Add homework",
+  "toReview": "To review",
+  "homeworkTitle": "Homework",
+  "filterToday": "Today",
+  "filterTomorrow": "Tomorrow",
+  "filterThisWeek": "This week",
+  "filterOverdue": "Overdue",
+  "filterCompleted": "Completed",
+  "filterAll": "All",
+  "statusPending": "Pending",
+  "statusInProgress": "In progress",
+  "statusCompleted": "Completed",
+  "statusOverdue": "Overdue",
+  "priorityLow": "Low",
+  "priorityMedium": "Medium",
+  "priorityHigh": "High",
+  "deadline": "Deadline",
+  "noHomeworkYet": "No homework here yet",
+  "addHomeworkFromCamera": "Scan with camera",
+  "addHomeworkManually": "Add manually",
+  "isThisCorrect": "Is this correct?",
+  "confirmAndSave": "Confirm and save",
+  "editBeforeSaving": "You can edit anything before saving",
+  "recognizing": "Reading the assignment…",
+  "aiTutorTitle": "AI Tutor",
+  "modeExplain": "Explain",
+  "modeSolveTogether": "Solve Together",
+  "modeSolution": "Solution",
+  "modeCheckAnswer": "Check My Answer",
+  "modeSimplify": "Simplify",
+  "modeGenerateTest": "Generate Test",
+  "askAnything": "Ask about this…",
+  "aiThinking": "Thinking…",
+  "aiNotConfigured": "AI features aren't set up for this build yet.",
+  "aiNotConfiguredBody": "This build was compiled without a Gemini API key. Ask whoever built this app to add one via GitHub Actions secrets.",
+  "materialsTitle": "Materials",
+  "notesTitle": "Notes",
+  "flashcardsTitle": "Flashcards",
+  "testsTitle": "Tests",
+  "scheduleTitle": "Schedule",
+  "focusModeTitle": "Focus",
+  "statisticsTitle": "Statistics",
+  "profileTitle": "Profile",
+  "searchTitle": "Search",
+  "searchHint": "Search homework, notes, materials…",
+  "noInternetConnection": "No internet connection",
+  "tryAgain": "Try again",
+  "somethingWentWrong": "Something went wrong",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "done": "Done",
+  "add": "Add",
+  "close": "Close",
+  "retry": "Retry",
+  "copy": "Copy",
+  "share": "Share",
+  "settingsLanguage": "Language",
+  "settingsTheme": "Appearance",
+  "settingsNotifications": "Notifications",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "hiName": "Hi {name}",
+  "@hiName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nextLesson": "Next lesson",
+  "dueSoon": "Due soon",
+  "testsAhead": "Tests ahead",
+  "reviewSuggestion": "Worth reviewing",
+  "continueSession": "Continue studying",
+  "startFocusSession": "Start a focus session",
+  "todayEmptyTitle": "Nothing scheduled for today",
+  "todayEmptySubtitle": "Enjoy the calm, or get ahead on something.",
+  "viewAll": "View all",
+  "minutesShort": "{count}m",
+  "@minutesShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dueIn": "Due in {time}",
+  "@dueIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "overdueBy": "Overdue by {time}",
+  "@overdueBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "atTime": "at {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "todayUpcomingTests": "Upcoming tests",
+  "todayReviewMaterials": "Materials to revisit",
+  "onboardingWelcomeTitle": "Welcome to StudAI",
+  "onboardingWelcomeBody": "Your personal study companion — homework, notes, materials, and an AI tutor that understands what you're working on.",
+  "onboardingLanguageTitle": "Choose your language",
+  "onboardingLanguageBody": "You can change this anytime in your profile.",
+  "onboardingNameTitle": "What should we call you?",
+  "onboardingNameBody": "Used to greet you on the home screen.",
+  "onboardingNameHint": "Your name",
+  "onboardingGradeTitle": "What grade are you in?",
+  "onboardingGradeBody": "Helps the AI tutor tailor explanations to your level.",
+  "onboardingGradeHint": "e.g. 9th grade",
+  "onboardingContinue": "Continue",
+  "onboardingBack": "Back",
+  "onboardingSkip": "Skip",
+  "onboardingGetStarted": "Get started",
+  "addMaterial": "Add material",
+  "chooseMaterialType": "Choose material type",
+  "materialFromPdf": "From PDF",
+  "materialFromImage": "From photo",
+  "materialFromText": "From text",
+  "materialTitle": "Title",
+  "materialContent": "Content",
+  "materialsEmptyTitle": "No materials yet",
+  "materialsEmptySubtitle": "Add notes, PDFs, or photos of your study materials to get started",
+  "materialAiSummarize": "Summarize",
+  "materialAiKeyPoints": "Key points",
+  "materialAiFindDates": "Find dates",
+  "materialAiFindFormulas": "Find formulas",
+  "materialAiQuestions": "Generate questions",
+  "materialAiFlashcards": "Make flashcards",
+  "materialAiTest": "Make a test",
+  "materialAiAskAboutThis": "Ask AI about this",
+  "flashcardsCreated": "{count, plural, one {1 flashcard created} other {{count} flashcards created}}",
+  "openFile": "Open file",
+  "pdfSearch": "Search in document",
+  "pdfFileMissing": "This file could not be found on your device.",
+  "pdfCouldNotOpen": "This PDF could not be opened. It may be corrupted or in an unsupported format.",
+  "generating": "Generating…",
+  "aiEmptyStateTitle": "Ask your AI tutor anything",
+  "aiEmptyStateSubtitle": "Pick a mode below and start a conversation about what you're studying",
+  "aiChooseMode": "Choose a mode",
+  "aiClearChat": "Clear chat",
+  "aiClearChatConfirm": "This will remove all messages in this conversation. This can't be undone.",
+  "aiSendHint": "Ask a question…",
+  "aiCameraAttach": "Attach a photo",
+  "modeExplainDesc": "Get a clear, simple explanation of a topic",
+  "modeSolveTogetherDesc": "Work through the problem step by step together",
+  "modeSolutionDesc": "See the full worked solution",
+  "modeCheckAnswerDesc": "Check your answer and understand mistakes",
+  "modeSimplifyDesc": "Turn a complex text into simple language",
+  "modeGenerateTestDesc": "Create a practice test on this topic",
+  "@flashcardsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aiResponseSaved": "Saved",
+
+  "notesEmptyTitle": "No notes yet",
+  "notesEmptySubtitle": "Write your first note, or photograph a page from your notebook",
+  "addNote": "Add note",
+  "newNote": "New note",
+  "noteTitleHint": "Title",
+  "noteContentHint": "Start writing…",
+  "noteAiStructure": "Structure this note",
+  "noteAiSummarize": "Summarize",
+  "noteAiKeyPoints": "Highlight key points",
+  "noteAiFindDates": "Find dates",
+  "noteAiFindFormulas": "Find formulas",
+  "noteAiQuestions": "Generate questions",
+  "noteAiFlashcards": "Make flashcards",
+  "noteFromCamera": "Photograph a page",
+  "noteAttachImage": "Attach image",
+  "applyResult": "Use this",
+  "noteSavedJustNow": "Saved",
+
+  "flashcardsEmptyTitle": "No flashcard decks yet",
+  "flashcardsEmptySubtitle": "Create a deck by hand, or generate one from a note or material",
+  "newDeck": "New deck",
+  "deckTitleHint": "Deck title",
+  "cardFrontHint": "Front",
+  "cardBackHint": "Back",
+  "addCard": "Add card",
+  "cardsCount": "{count, plural, one {1 card} other {{count} cards}}",
+  "@cardsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckEmptyTitle": "This deck has no cards yet",
+  "studyDeck": "Study",
+  "flipCard": "Tap to flip",
+  "knewIt": "Knew it",
+  "didntKnowIt": "Didn't know it",
+  "studySessionComplete": "Deck complete",
+  "studySessionCompleteBody": "You reviewed {count, plural, one {1 card} other {{count} cards}} this session.",
+  "@studySessionCompleteBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewAgain": "Review again",
+  "backToDecks": "Back to decks",
+  "deleteDeck": "Delete deck",
+  "generateFromNote": "From a note",
+  "generateFromMaterial": "From a material",
+  "generateFromTopic": "From a topic",
+
+  "testsEmptyTitle": "No tests yet",
+  "testsEmptySubtitle": "Generate a practice test with AI, based on any subject and topic",
+  "newTest": "New test",
+  "generateTest": "Generate test",
+  "testSubject": "Subject",
+  "testTopic": "Topic",
+  "testTopicHint": "e.g. Quadratic equations",
+  "testDifficulty": "Difficulty",
+  "difficultyEasy": "Easy",
+  "difficultyMedium": "Medium",
+  "difficultyHard": "Hard",
+  "testQuestionCount": "Number of questions",
+  "testQuestionTypes": "Question types",
+  "typeMultipleChoice": "Multiple choice",
+  "typeTrueFalse": "True / False",
+  "typeShortAnswer": "Short answer",
+  "generatingTest": "Creating your test…",
+  "startTest": "Start test",
+  "retakeTest": "Retake test",
+  "questionOf": "Question {current} of {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "submitAnswer": "Submit",
+  "nextQuestion": "Next",
+  "finishTest": "Finish test",
+  "yourAnswerHint": "Type your answer…",
+  "testResultsTitle": "Test results",
+  "testScore": "{correct} out of {total} correct",
+  "@testScore": {
+    "placeholders": {
+      "correct": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "reviewAnswers": "Review answers",
+  "correctAnswerLabel": "Correct answer",
+  "yourAnswerLabel": "Your answer",
+  "explanationLabel": "Explanation",
+  "trueOption": "True",
+  "falseOption": "False",
+
+  "scheduleTodayTab": "Today",
+  "scheduleTomorrowTab": "Tomorrow",
+  "scheduleWeekTab": "Week",
+  "scheduleEmptyTitle": "No lessons scheduled",
+  "scheduleEmptySubtitle": "Add your weekly lessons to see them here and on Today",
+  "addLesson": "Add lesson",
+  "editLesson": "Edit lesson",
+  "lessonSubject": "Subject",
+  "lessonDay": "Day",
+  "lessonStartTime": "Start time",
+  "lessonEndTime": "End time",
+  "lessonRoom": "Room (optional)",
+  "lessonTeacher": "Teacher (optional)",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+
+  "focusSetupTitle": "Focus mode",
+  "focusChooseHomework": "What are you focusing on?",
+  "focusNoHomeworkOption": "Just study, no specific homework",
+  "focusDuration": "Duration",
+  "focusStart": "Start focusing",
+  "focusPaused": "Paused",
+  "focusResume": "Resume",
+  "focusPause": "Pause",
+  "focusEnd": "End session",
+  "focusEndConfirmTitle": "End focus session?",
+  "focusEndConfirmBody": "Your progress so far will be saved.",
+  "focusAiHelp": "AI help",
+  "focusSessionSavedTitle": "Nice work",
+  "focusSessionSavedBody": "You focused for {duration}.",
+  "@focusSessionSavedBody": {
+    "placeholders": {
+      "duration": {"type": "String"}
+    }
+  },
+  "focusBackToToday": "Back to Today",
+  "focusMinutes": "{count} min",
+  "@focusMinutes": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "statsCompletedHomework": "Completed homework",
+  "statsOverdueHomework": "Overdue homework",
+  "statsCompletionRate": "Completion rate",
+  "statsStudyTime": "Study time",
+  "statsStudyTimeBySubject": "Study time by subject",
+  "statsWeekly": "This week",
+  "statsMonthly": "This month",
+  "statsMostStudied": "Most studied subjects",
+  "statsTestsCompleted": "Tests completed",
+  "statsEmptyTitle": "No study activity yet",
+  "statsEmptySubtitle": "Complete homework, take tests, or run a focus session to see your stats here",
+  "statsPeriodWeek": "Week",
+  "statsPeriodMonth": "Month",
+  "statsPeriodAllTime": "All time",
+
+  "profileDisplayName": "Name",
+  "profileGradeLevel": "Grade",
+  "profileEditDetails": "Edit details",
+  "profileAppearance": "Appearance",
+  "profileLanguage": "Language",
+  "profileNotifications": "Notifications",
+  "profileNotificationsSubtitle": "Homework deadlines, tests, and lessons",
+  "profileStatistics": "Statistics",
+  "profileAbout": "About",
+  "profileAiStatus": "AI status",
+  "profileAiConfigured": "Connected to Gemini",
+  "profileAiNotConfigured": "Not configured for this build",
+  "profileSubjects": "Subjects",
+  "profileManageSubjects": "Manage subjects",
+  "profileAddCustomSubject": "Add a custom subject",
+  "profileVersion": "Version",
+
+  "searchEmptyTitle": "Search everything",
+  "searchEmptySubtitle": "Homework, notes, materials, flashcards, tests, and saved AI answers",
+  "searchNoResults": "No results for \"{query}\"",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {"type": "String"}
+    }
+  },
+  "searchSectionHomework": "Homework",
+  "searchSectionNotes": "Notes",
+  "searchSectionMaterials": "Materials",
+  "searchSectionFlashcards": "Flashcard decks",
+  "searchSectionTests": "Tests",
+  "searchSectionSaved": "Saved AI answers",
+
+  "voiceListening": "Listening…",
+  "voiceNotAvailable": "Voice input isn't available on this device.",
+  "speak": "Speak your answer",
+
+  "confirmDeleteTitle": "Delete this?",
+  "confirmDeleteBody": "This can't be undone.",
+  "untitled": "Untitled",
+  "noSubject": "No subject",
+  "loadingEllipsis": "Loading…"
+}

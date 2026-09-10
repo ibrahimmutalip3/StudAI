@@ -1,0 +1,394 @@
+{
+  "@@locale": "hy",
+  "appName": "Ուսումնական օգնական",
+  "navToday": "Այսօր",
+  "navHomework": "Առաջադրանքներ",
+  "navAiTutor": "AI-ուսուցիչ",
+  "navMaterials": "Նյութեր",
+  "navProfile": "Անձնական",
+  "goodMorning": "Բարի լույս",
+  "goodAfternoon": "Բարի օր",
+  "goodEvening": "Բարի երեկո",
+  "todaysOverview": "Օրվա ակնարկ",
+  "upNext": "Հաջորդը",
+  "homeworkDueToday": "Այսօրվա առաջադրանքները",
+  "noLessonsToday": "Այսօր դասեր չկան",
+  "allCaughtUp": "Ամեն ինչ պատրաստ է",
+  "addHomework": "Ավելացնել առաջադրանք",
+  "toReview": "Կրկնել",
+  "homeworkTitle": "Տնային առաջադրանքներ",
+  "filterToday": "Այսօր",
+  "filterTomorrow": "Վաղը",
+  "filterThisWeek": "Այս շաբաթ",
+  "filterOverdue": "Ուշացած",
+  "filterCompleted": "Կատարված",
+  "filterAll": "Բոլորը",
+  "statusPending": "Սպասվում է",
+  "statusInProgress": "Ընթացքի մեջ",
+  "statusCompleted": "Կատարված",
+  "statusOverdue": "Ուշացած",
+  "priorityLow": "Ցածր",
+  "priorityMedium": "Միջին",
+  "priorityHigh": "Բարձր",
+  "deadline": "Վերջնաժամկետ",
+  "noHomeworkYet": "Առաջադրանքներ դեռ չկան",
+  "addHomeworkFromCamera": "Սկանավորել տեսախցիկով",
+  "addHomeworkManually": "Ավելացնել ձեռքով",
+  "isThisCorrect": "Ճի՞շտ է սա",
+  "confirmAndSave": "Հաստատել և պահպանել",
+  "editBeforeSaving": "Կարող եք փոփոխել՝ նախքան պահպանելը",
+  "recognizing": "Կարդում ենք առաջադրանքը…",
+  "aiTutorTitle": "AI-ուսուցիչ",
+  "modeExplain": "Բացատրել",
+  "modeSolveTogether": "Լուծել միասին",
+  "modeSolution": "Լուծում",
+  "modeCheckAnswer": "Ստուգել պատասխանը",
+  "modeSimplify": "Պարզեցնել",
+  "modeGenerateTest": "Ստեղծել թեստ",
+  "askAnything": "Հարցրեք սրա մասին…",
+  "aiThinking": "Մտածում եմ…",
+  "aiNotConfigured": "AI գործառույթները դեռ կարգավորված չեն այս տարբերակի համար։",
+  "aiNotConfiguredBody": "Այս տարբերակը հավաքվել է առանց Gemini API բանալիի։ Խնդրեք հավաքողին ավելացնել բանալին GitHub Actions գաղտնիքների միջոցով։",
+  "materialsTitle": "Նյութեր",
+  "notesTitle": "Նշումներ",
+  "flashcardsTitle": "Ֆլեշ-քարտեր",
+  "testsTitle": "Թեստեր",
+  "scheduleTitle": "Դասացուցակ",
+  "focusModeTitle": "Կենտրոնացում",
+  "statisticsTitle": "Վիճակագրություն",
+  "profileTitle": "Անձնական",
+  "searchTitle": "Որոնում",
+  "searchHint": "Փնտրել առաջադրանքներ, նշումներ, նյութեր…",
+  "noInternetConnection": "Ինտերնետ կապ չկա",
+  "tryAgain": "Կրկին փորձել",
+  "somethingWentWrong": "Ինչ-որ բան այն չէ",
+  "save": "Պահպանել",
+  "cancel": "Չեղարկել",
+  "delete": "Ջնջել",
+  "edit": "Փոփոխել",
+  "done": "Պատրաստ է",
+  "add": "Ավելացնել",
+  "close": "Փակել",
+  "retry": "Կրկին փորձել",
+  "copy": "Պատճենել",
+  "share": "Կիսվել",
+  "settingsLanguage": "Լեզու",
+  "settingsTheme": "Տեսք",
+  "settingsNotifications": "Ծանուցումներ",
+  "themeSystem": "Համակարգային",
+  "themeLight": "Բաց",
+  "themeDark": "Մուգ",
+  "onboardingWelcomeTitle": "Բարի գալուստ StudAI",
+  "onboardingWelcomeBody": "Ձեր անձնական ուսումնական օգնականը՝ տնային աշխատանքներ, նշումներ, նյութեր և AI-կրկնուսույց, որը հասկանում է, թե ինչի վրա եք աշխատում։",
+  "onboardingLanguageTitle": "Ընտրեք լեզուն",
+  "onboardingLanguageBody": "Կարող եք փոխել սա ցանկացած պահի Պրոֆիլում։",
+  "onboardingNameTitle": "Ինչպե՞ս ձեզ անվանենք",
+  "onboardingNameHint": "Ձեր անունը",
+  "onboardingNameBody": "Օգտագործվում է Այսօր էջում ողջույնը անհատականացնելու համար։",
+  "onboardingGradeTitle": "Որ դասարանում եք սովորում",
+  "onboardingGradeBody": "Օգնում է AI-կրկնուսույցին բացատրությունները հարմարեցնել ձեր մակարդակին։",
+  "onboardingGradeHint": "օրինակ՝ 9-րդ դասարան",
+  "onboardingGetStarted": "Սկսել",
+  "onboardingContinue": "Շարունակել",
+  "onboardingSkip": "Բաց թողնել",
+  "onboardingBack": "Հետ",
+  "hiName": "Բարև, {name}",
+  "@hiName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nextLesson": "Հաջորդ դասը",
+  "dueSoon": "Մոտալուտ ժամկետ",
+  "testsAhead": "Առաջիկա ստուգողականներ",
+  "reviewSuggestion": "Արժե կրկնել",
+  "continueSession": "Շարունակել ուսումը",
+  "startFocusSession": "Սկսել կենտրոնացման սեսիա",
+  "todayEmptyTitle": "Այսօրվա համար ոչինչ նախատեսված չէ",
+  "todayEmptySubtitle": "Վայելեք հանգիստ պահը կամ նախապես զբաղվեք ինչ-որ բանով։",
+  "viewAll": "Տեսնել բոլորը",
+  "minutesShort": "{count} ր",
+  "@minutesShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dueIn": "Ժամկետը՝ {time}",
+  "@dueIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "overdueBy": "Ուշացում՝ {time}",
+  "@overdueBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "atTime": "ժամը {time}",
+  "@atTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "todayUpcomingTests": "Առաջիկա ստուգողականներ",
+  "todayReviewMaterials": "Կրկնման նյութեր",
+  "addMaterial": "Ավելացնել նյութ",
+  "chooseMaterialType": "Ընտրեք նյութի տեսակը",
+  "materialFromPdf": "PDF-ից",
+  "materialFromImage": "Լուսանկարից",
+  "materialFromText": "Տեքստից",
+  "materialTitle": "Վերնագիր",
+  "materialContent": "Բովանդակություն",
+  "materialsEmptyTitle": "Դեռ նյութեր չկան",
+  "materialsEmptySubtitle": "Ավելացրեք նշումներ, PDF կամ ուսումնական նյութերի լուսանկարներ՝ սկսելու համար",
+  "materialAiSummarize": "Ամփոփել",
+  "materialAiKeyPoints": "Հիմնական մտքեր",
+  "materialAiFindDates": "Գտնել ամսաթվերը",
+  "materialAiFindFormulas": "Գտնել բանաձևերը",
+  "materialAiQuestions": "Ստեղծել հարցեր",
+  "materialAiFlashcards": "Ստեղծել քարտեր",
+  "materialAiTest": "Ստեղծել թեստ",
+  "materialAiAskAboutThis": "Հարցնել AI-ին սրա մասին",
+  "flashcardsCreated": "{count, plural, one {Ստեղծվեց 1 քարտ} other {Ստեղծվեց {count} քարտ}}",
+  "openFile": "Բացել ֆայլը",
+  "pdfSearch": "Փնտրել փաստաթղթում",
+  "pdfFileMissing": "Այս ֆայլը չի գտնվել ձեր սարքում։",
+  "pdfCouldNotOpen": "Չհաջողվեց բացել այս PDF-ը։ Հնարավոր է՝ ֆայլը վնասված է կամ ունի չաջակցվող ձևաչափ։",
+  "generating": "Ստեղծվում է…",
+  "aiEmptyStateTitle": "Հարցրեք ձեր AI-դաստիարակին ցանկացած բան",
+  "aiEmptyStateSubtitle": "Ընտրեք ռեժիմը ներքևում և սկսեք զրույց այն մասին, ինչ ուսումնասիրում եք",
+  "aiChooseMode": "Ընտրեք ռեժիմը",
+  "aiClearChat": "Մաքրել զրույցը",
+  "aiClearChatConfirm": "Այս զրույցի բոլոր հաղորդագրությունները կհեռացվեն։ Այս գործողությունը հնարավոր չէ հետարկել։",
+  "aiSendHint": "Տվեք հարց…",
+  "aiCameraAttach": "Կցել լուսանկար",
+  "modeExplainDesc": "Ստացեք թեմայի պարզ և հասկանալի բացատրություն",
+  "modeSolveTogetherDesc": "Լուծեք խնդիրը քայլ առ քայլ միասին",
+  "modeSolutionDesc": "Տեսնել ամբողջական լուծումը",
+  "modeCheckAnswerDesc": "Ստուգեք ձեր պատասխանը և հասկացեք սխալները",
+  "modeSimplifyDesc": "Բարդ տեքստը բացատրել պարզ լեզվով",
+  "modeGenerateTestDesc": "Ստեղծել գործնական թեստ թեմայի շուրջ",
+  "@flashcardsCreated": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aiResponseSaved": "Պահպանված է",
+
+  "notesEmptyTitle": "Դեռ նշումներ չկան",
+  "notesEmptySubtitle": "Գրեք ձեր առաջին նշումը կամ լուսանկարեք տետրի էջը",
+  "addNote": "Ավելացնել նշում",
+  "newNote": "Նոր նշում",
+  "noteTitleHint": "Վերնագիր",
+  "noteContentHint": "Սկսեք գրել…",
+  "noteAiStructure": "Կառուցվածքավորել նշումը",
+  "noteAiSummarize": "Ամփոփել",
+  "noteAiKeyPoints": "Առանձնացնել հիմնականը",
+  "noteAiFindDates": "Գտնել ամսաթվերը",
+  "noteAiFindFormulas": "Գտնել բանաձևերը",
+  "noteAiQuestions": "Ստեղծել հարցեր",
+  "noteAiFlashcards": "Ստեղծել քարտեր",
+  "noteFromCamera": "Լուսանկարել էջը",
+  "noteAttachImage": "Կցել նկար",
+  "applyResult": "Օգտագործել սա",
+  "noteSavedJustNow": "Պահպանված է",
+
+  "flashcardsEmptyTitle": "Դեռ քարտերի հավաքածուներ չկան",
+  "flashcardsEmptySubtitle": "Ստեղծեք հավաքածու ձեռքով կամ գեներացրեք այն նշումից կամ նյութից",
+  "newDeck": "Նոր հավաքածու",
+  "deckTitleHint": "Հավաքածուի անվանում",
+  "cardFrontHint": "Հարց",
+  "cardBackHint": "Պատասխան",
+  "addCard": "Ավելացնել քարտ",
+  "cardsCount": "{count, plural, one {1 քարտ} other {{count} քարտ}}",
+  "@cardsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckEmptyTitle": "Այս հավաքածուում դեռ քարտեր չկան",
+  "studyDeck": "Սովորել",
+  "flipCard": "Հպեք՝ շուռ տալու համար",
+  "knewIt": "Գիտեի",
+  "didntKnowIt": "Չգիտեի",
+  "studySessionComplete": "Հավաքածուն ամփոփված է",
+  "studySessionCompleteBody": "Այս սեսիայում կրկնեցիք {count, plural, one {1 քարտ} other {{count} քարտ}}։",
+  "@studySessionCompleteBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewAgain": "Կրկնել նորից",
+  "backToDecks": "Հավաքածուներին",
+  "deleteDeck": "Ջնջել հավաքածուն",
+  "generateFromNote": "Նշումից",
+  "generateFromMaterial": "Նյութից",
+  "generateFromTopic": "Թեմայից",
+
+  "testsEmptyTitle": "Դեռ թեստեր չկան",
+  "testsEmptySubtitle": "Ստեղծեք գործնական թեստ AI-ի միջոցով ցանկացած առարկայի և թեմայի համար",
+  "newTest": "Նոր թեստ",
+  "generateTest": "Ստեղծել թեստ",
+  "testSubject": "Առարկա",
+  "testTopic": "Թեմա",
+  "testTopicHint": "օրինակ՝ քառակուսի հավասարումներ",
+  "testDifficulty": "Դժվարություն",
+  "difficultyEasy": "Հեշտ",
+  "difficultyMedium": "Միջին",
+  "difficultyHard": "Բարդ",
+  "testQuestionCount": "Հարցերի քանակ",
+  "testQuestionTypes": "Հարցերի տեսակներ",
+  "typeMultipleChoice": "Բազմակի ընտրություն",
+  "typeTrueFalse": "Ճիշտ / Սխալ",
+  "typeShortAnswer": "Կարճ պատասխան",
+  "generatingTest": "Ստեղծում ենք ձեր թեստը…",
+  "startTest": "Սկսել թեստը",
+  "retakeTest": "Կրկին անցնել",
+  "questionOf": "Հարց {current} / {total}",
+  "@questionOf": {
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "submitAnswer": "Հաստատել",
+  "nextQuestion": "Հաջորդը",
+  "finishTest": "Ավարտել թեստը",
+  "yourAnswerHint": "Մուտքագրեք պատասխանը…",
+  "testResultsTitle": "Թեստի արդյունքները",
+  "testScore": "{correct}/{total} ճիշտ",
+  "@testScore": {
+    "placeholders": {
+      "correct": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "reviewAnswers": "Դիտել պատասխանները",
+  "correctAnswerLabel": "Ճիշտ պատասխան",
+  "yourAnswerLabel": "Ձեր պատասխանը",
+  "explanationLabel": "Բացատրություն",
+  "trueOption": "Ճիշտ",
+  "falseOption": "Սխալ",
+
+  "scheduleTodayTab": "Այսօր",
+  "scheduleTomorrowTab": "Վաղը",
+  "scheduleWeekTab": "Շաբաթ",
+  "scheduleEmptyTitle": "Դասեր ավելացված չեն",
+  "scheduleEmptySubtitle": "Ավելացրեք ձեր շաբաթական դասացուցակը՝ տեսնելու համար այստեղ և Այսօր էջում",
+  "addLesson": "Ավելացնել դաս",
+  "editLesson": "Փոփոխել դասը",
+  "lessonSubject": "Առարկա",
+  "lessonDay": "Օր",
+  "lessonStartTime": "Սկիզբ",
+  "lessonEndTime": "Ավարտ",
+  "lessonRoom": "Կաբինետ (ընտրովի)",
+  "lessonTeacher": "Ուսուցիչ (ընտրովի)",
+  "monday": "Երկուշաբթի",
+  "tuesday": "Երեքշաբթի",
+  "wednesday": "Չորեքշաբթի",
+  "thursday": "Հինգշաբթի",
+  "friday": "Ուրբաթ",
+  "saturday": "Շաբաթ",
+  "sunday": "Կիրակի",
+
+  "focusSetupTitle": "Կենտրոնացման ռեժիմ",
+  "focusChooseHomework": "Ինչի վրա եք կենտրոնանում",
+  "focusNoHomeworkOption": "Պարզապես սովորել, առանց կոնկրետ առաջադրանքի",
+  "focusDuration": "Տևողություն",
+  "focusStart": "Սկսել կենտրոնացումը",
+  "focusPaused": "Դադարեցված է",
+  "focusResume": "Շարունակել",
+  "focusPause": "Դադար",
+  "focusEnd": "Ավարտել սեսիան",
+  "focusEndConfirmTitle": "Ավարտել կենտրոնացման սեսիան",
+  "focusEndConfirmBody": "Ձեր առաջընթացը կպահպանվի։",
+  "focusAiHelp": "AI օգնություն",
+  "focusSessionSavedTitle": "Հիանալի աշխատանք",
+  "focusSessionSavedBody": "Դուք կենտրոնացած էիք {duration}։",
+  "@focusSessionSavedBody": {
+    "placeholders": {
+      "duration": {"type": "String"}
+    }
+  },
+  "focusBackToToday": "Վերադառնալ Այսօր",
+  "focusMinutes": "{count} ր",
+  "@focusMinutes": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "statsCompletedHomework": "Կատարված առաջադրանքներ",
+  "statsOverdueHomework": "Ուշացած առաջադրանքներ",
+  "statsCompletionRate": "Կատարման տոկոս",
+  "statsStudyTime": "Ուսումնական ժամանակ",
+  "statsStudyTimeBySubject": "Ուսումնական ժամանակ ըստ առարկայի",
+  "statsWeekly": "Այս շաբաթ",
+  "statsMonthly": "Այս ամիս",
+  "statsMostStudied": "Ամենաշատ ուսումնասիրված առարկաներ",
+  "statsTestsCompleted": "Ավարտված թեստեր",
+  "statsEmptyTitle": "Դեռ ուսումնական ակտիվություն չկա",
+  "statsEmptySubtitle": "Կատարեք առաջադրանքներ, անցեք թեստեր կամ սկսեք կենտրոնացման սեսիա՝ վիճակագրությունը տեսնելու համար",
+  "statsPeriodWeek": "Շաբաթ",
+  "statsPeriodMonth": "Ամիս",
+  "statsPeriodAllTime": "Ամբողջ ժամանակ",
+
+  "profileDisplayName": "Անուն",
+  "profileGradeLevel": "Դասարան",
+  "profileEditDetails": "Փոփոխել տվյալները",
+  "profileAppearance": "Տեսք",
+  "profileLanguage": "Լեզու",
+  "profileNotifications": "Ծանուցումներ",
+  "profileNotificationsSubtitle": "Առաջադրանքների ժամկետներ, թեստեր և դասեր",
+  "profileStatistics": "Վիճակագրություն",
+  "profileAbout": "Հավելվածի մասին",
+  "profileAiStatus": "AI կարգավիճակ",
+  "profileAiConfigured": "Միացված է Gemini-ին",
+  "profileAiNotConfigured": "Կարգավորված չէ այս տարբերակի համար",
+  "profileSubjects": "Առարկաներ",
+  "profileManageSubjects": "Կառավարել առարկաները",
+  "profileAddCustomSubject": "Ավելացնել սեփական առարկա",
+  "profileVersion": "Տարբերակ",
+
+  "searchEmptyTitle": "Փնտրել ամեն ինչ",
+  "searchEmptySubtitle": "Առաջադրանքներ, նշումներ, նյութեր, քարտեր, թեստեր և պահպանված AI պատասխաններ",
+  "searchNoResults": "Ոչինչ չգտնվեց «{query}» հարցման համար",
+  "@searchNoResults": {
+    "placeholders": {
+      "query": {"type": "String"}
+    }
+  },
+  "searchSectionHomework": "Առաջադրանքներ",
+  "searchSectionNotes": "Նշումներ",
+  "searchSectionMaterials": "Նյութեր",
+  "searchSectionFlashcards": "Քարտերի հավաքածուներ",
+  "searchSectionTests": "Թեստեր",
+  "searchSectionSaved": "Պահպանված AI պատասխաններ",
+
+  "voiceListening": "Լսում եմ…",
+  "voiceNotAvailable": "Ձայնային մուտքագրումը հասանելի չէ այս սարքում։",
+  "speak": "Ասեք ձեր պատասխանը",
+
+  "confirmDeleteTitle": "Ջնջել սա",
+  "confirmDeleteBody": "Այս գործողությունը հնարավոր չէ հետարկել։",
+  "untitled": "Անանուն",
+  "noSubject": "Առարկա չկա",
+  "loadingEllipsis": "Բեռնում…"
+}

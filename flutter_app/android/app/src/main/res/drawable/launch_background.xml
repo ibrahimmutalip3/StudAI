@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Native cold-start background shown for the brief moment before Flutter
+     draws its first frame. Kept as a plain brand-colored surface — the
+     actual animated splash (logo assembling, per product spec §32) is
+     implemented in Dart in lib/features/onboarding so it can be a real,
+     smooth, controllable animation rather than a static native asset. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/normal_theme_background" />
+</layer-list>

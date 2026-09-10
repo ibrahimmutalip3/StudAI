@@ -1,0 +1,109 @@
+name: study_assistant
+description: "StudAI — a context-aware AI study companion for schoolchildren."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+  flutter: ">=3.22.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # Local database (Drift / SQLite) — see ADR in lib/core/database/tables.dart
+  drift: ^2.22.1
+  sqlite3_flutter_libs: ^0.5.27
+  path_provider: ^2.1.5
+  path: ^1.9.0
+
+  # Networking (Gemini API calls, made directly from the device)
+  http: ^1.2.2
+
+  # Camera / images
+  image_picker: ^1.1.2
+  cached_network_image: ^3.4.1
+
+  # PDF support
+  printing: ^5.13.4
+  pdf: ^3.11.1
+  syncfusion_flutter_pdfviewer: ^27.2.5
+  syncfusion_flutter_core: ^27.2.5
+
+  # File handling
+  file_picker: ^8.1.6
+  share_plus: ^10.1.2
+
+  # Local notifications
+  flutter_local_notifications: ^18.0.1
+  timezone: ^0.9.4
+
+  # Icons & UI
+  cupertino_icons: ^1.0.8
+  phosphor_flutter: ^2.1.0
+  flutter_svg: ^2.0.16
+  shimmer: ^3.0.0
+  google_fonts: ^6.2.1
+
+  # Connectivity
+  connectivity_plus: ^6.1.1
+
+  # Utilities
+  uuid: ^4.5.1
+  intl: ^0.19.0
+  collection: ^1.19.0
+  flutter_markdown: ^0.7.4+3
+  markdown: ^7.2.2
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+
+  # Speech (voice mode architecture — text-to-speech works with zero backend;
+  # speech-to-text requires platform mic permission, wired but gracefully
+  # degrades if unavailable on a given device/platform).
+  speech_to_text: ^7.0.0
+  flutter_tts: ^4.2.0
+
+  # Animations
+  flutter_animate: ^4.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  # Codegen
+  build_runner: ^2.4.13
+  drift_dev: ^2.22.1
+  riverpod_generator: ^2.6.3
+
+  # App icon generation from a single source image (see assets/icons/app_icon_source.png).
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+
+# StudAI app icon: the source image IS the icon, unmodified except for
+# resizing per density bucket. Deliberately NOT using adaptive_icon_*
+# (which would split the image into separate foreground/background
+# layers) — every mipmap-<density>/ic_launcher.png is the same flat
+# artwork, just scaled, exactly as provided.
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/icons/app_icon_source.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true

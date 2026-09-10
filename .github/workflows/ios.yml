@@ -1,0 +1,98 @@
+name: iOS Unsigned Build
+
+# Builds an UNSIGNED iOS .app and packages it into a .ipa suitable for
+# later self-signing (e.g. with ESign). No Apple Developer account,
+# certificates, provisioning profiles, or App Store Connect credentials
+# are used or required. The Gemini API key comes from the GEMINI_API_KEY
+# repository secret and is injected only via --dart-define at build time.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-ios:
+    name: Build unsigned IPA
+    runs-on: macos-14
+    defaults:
+      run:
+        working-directory: flutter_app
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.24.0"
+          cache: true
+
+      - name: Flutter doctor
+        run: flutter doctor -v
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Run code generation (Drift / Riverpod)
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Analyze project
+        run: flutter analyze --no-fatal-infos
+        continue-on-error: true
+
+      - name: Install CocoaPods dependencies
+        working-directory: flutter_app/ios
+        run: pod install --repo-update
+
+      - name: Build unsigned iOS app
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Optional — leave the repo secret unset and the PDF viewer still
+          # works, just with a small unlicensed-build watermark.
+          SYNCFUSION_LICENSE_KEY: ${{ secrets.SYNCFUSION_LICENSE_KEY }}
+        run: |
+          flutter build ios --release --no-codesign \
+            --dart-define=GEMINI_API_KEY="$GEMINI_API_KEY" \
+            --dart-define=SYNCFUSION_LICENSE_KEY="$SYNCFUSION_LICENSE_KEY"
+
+      - name: Package .app into an unsigned .ipa
+        run: |
+          set -euo pipefail
+          BUILD_DIR="build/ios/iphoneos"
+          APP_PATH="$BUILD_DIR/Runner.app"
+
+          if [ ! -d "$APP_PATH" ]; then
+            echo "::error::Runner.app not found at $APP_PATH"
+            exit 1
+          fi
+
+          PAYLOAD_DIR="$BUILD_DIR/Payload"
+          rm -rf "$PAYLOAD_DIR"
+          mkdir -p "$PAYLOAD_DIR"
+          cp -R "$APP_PATH" "$PAYLOAD_DIR/"
+
+          IPA_PATH="$BUILD_DIR/StudAI-unsigned.ipa"
+          (cd "$BUILD_DIR" && zip -r -y "$(basename "$IPA_PATH")" Payload > /dev/null)
+
+          echo "ipa_path=flutter_app/$IPA_PATH" >> "$GITHUB_ENV"
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: studai-ios-unsigned-ipa
+          path: ${{ env.ipa_path }}
+          if-no-files-found: error
+          retention-days: 30

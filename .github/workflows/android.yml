@@ -1,0 +1,88 @@
+name: Android Release Build
+
+# Builds a release APK of the Flutter app and uploads it as a workflow
+# artifact. The Gemini API key is read from the GEMINI_API_KEY repository
+# secret and injected at build time only via --dart-define — it is never
+# written to disk, never committed, and never printed to the build log.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-android:
+    name: Build release APK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flutter_app
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.24.0"
+          cache: true
+
+      - name: Flutter doctor
+        run: flutter doctor -v
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Run code generation (Drift / Riverpod)
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Analyze project
+        run: flutter analyze --no-fatal-infos
+        continue-on-error: true
+
+      - name: Build release APK
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Optional — leave the repo secret unset and the PDF viewer still
+          # works, just with a small unlicensed-build watermark.
+          SYNCFUSION_LICENSE_KEY: ${{ secrets.SYNCFUSION_LICENSE_KEY }}
+        run: |
+          flutter build apk --release \
+            --dart-define=GEMINI_API_KEY="$GEMINI_API_KEY" \
+            --dart-define=SYNCFUSION_LICENSE_KEY="$SYNCFUSION_LICENSE_KEY"
+
+      - name: Locate build output
+        id: locate
+        run: |
+          APK_PATH="build/app/outputs/flutter-apk/app-release.apk"
+          if [ ! -f "$APK_PATH" ]; then
+            echo "::error::Release APK not found at $APK_PATH"
+            exit 1
+          fi
+          echo "apk_path=flutter_app/$APK_PATH" >> "$GITHUB_OUTPUT"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: studai-android-release-apk
+          path: ${{ steps.locate.outputs.apk_path }}
+          if-no-files-found: error
+          retention-days: 30
