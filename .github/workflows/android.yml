@@ -52,6 +52,15 @@ jobs:
         run: flutter gen-l10n
 
       - name: Run code generation (Drift / Riverpod)
+        # If this step ever hangs again inside package:analyzer
+        # (AnalysisDriverScheduler._run / <asynchronous suspension> in the
+        # log, no progress for many minutes), add --low-resources-mode to
+        # the command below. It makes build_runner analyze one file at a
+        # time instead of building the whole project's analysis graph up
+        # front, which works around known analyzer deadlocks on large ASTs
+        # at the cost of some build speed. lib/core/router/app_router.dart
+        # was already split into smaller top-level functions for the same
+        # reason, so this flag is a fallback, not the primary fix.
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Analyze project
