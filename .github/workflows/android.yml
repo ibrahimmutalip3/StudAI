@@ -39,7 +39,24 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: "3.47.2"
+          # Pinned to the last Flutter release before Dart 3.10's
+          # "dot shorthands" language feature (shipped in Flutter 3.38+).
+          # riverpod_generator 2.x / drift_dev 2.x are pinned to
+          # analyzer <7.0.0 (see the note in pubspec.yaml) and that
+          # analyzer version cannot parse dot-shorthand syntax now baked
+          # into the Flutter SDK itself. On Flutter >=3.38 this doesn't
+          # error out — analyzer hits an unhandled exception deep inside
+          # AnalysisDriverScheduler and the whole build_runner process
+          # hangs forever instead of failing, which is why builds were
+          # running for 6 hours until GitHub cancelled them. Bumping to
+          # 3.38+ requires riverpod_generator 4.x, which requires a
+          # Riverpod 2 -> 3 migration (a separate, larger change) — so for
+          # now stay on the last 3.35.x patch release. The Android Gradle
+          # Plugin / Gradle / Kotlin versions in android/ were bumped to
+          # 8.13.0 / 8.13 / 2.1.20 to match (AGP 8.5.2 only supports
+          # compileSdk up to API 34, but this project builds against
+          # compileSdk 35).
+          flutter-version: "3.35.5"
           cache: true
 
       - name: Flutter doctor
@@ -52,15 +69,6 @@ jobs:
         run: flutter gen-l10n
 
       - name: Run code generation (Drift / Riverpod)
-        # If this step ever hangs again inside package:analyzer
-        # (AnalysisDriverScheduler._run / <asynchronous suspension> in the
-        # log, no progress for many minutes), add --low-resources-mode to
-        # the command below. It makes build_runner analyze one file at a
-        # time instead of building the whole project's analysis graph up
-        # front, which works around known analyzer deadlocks on large ASTs
-        # at the cost of some build speed. lib/core/router/app_router.dart
-        # was already split into smaller top-level functions for the same
-        # reason, so this flag is a fallback, not the primary fix.
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Analyze project

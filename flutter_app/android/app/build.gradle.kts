@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -15,10 +17,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -45,6 +43,16 @@ android {
                 "proguard-rules.pro",
             )
         }
+    }
+}
+
+// `android.kotlinOptions {}` is deprecated as of Kotlin 2.0 (warning) and
+// removed as of Kotlin 2.2 (hard error); `kotlin.compilerOptions {}` at the
+// top level is the current replacement, so this won't need touching again
+// on the next Kotlin bump.
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
