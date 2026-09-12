@@ -34,8 +34,15 @@ dependencies:
   # PDF support
   printing: ^5.13.4
   pdf: ^3.11.1
-  syncfusion_flutter_pdfviewer: ^32.2.4
-  syncfusion_flutter_core: ^32.2.4
+  # Pinned to an EXACT version (no ^) rather than a range: 32.2.9 (the
+  # latest patch satisfying ^32.2.4 as of this CI run) fails `flutter
+  # analyze` with "Undefined name 'SyncfusionLicense'" at the
+  # SyncfusionLicense.registerLicense(...) call in lib/main.dart, even
+  # though core.dart's public docs still list that API. 32.2.4 is the
+  # version this was last verified working against — bump deliberately,
+  # not automatically, and re-verify the license call still resolves.
+  syncfusion_flutter_pdfviewer: 32.2.4
+  syncfusion_flutter_core: 32.2.4
 
   # File handling
   file_picker: ^8.1.6
@@ -97,6 +104,38 @@ dev_dependencies:
 
   # App icon generation from a single source image (see assets/icons/app_icon_source.png).
   flutter_launcher_icons: ^0.14.3
+
+# --- CI build compatibility pins -------------------------------------------
+# Both overrides below hold back a *transitive* dependency (pulled in by
+# share_plus / connectivity_plus / image_picker, not listed directly above)
+# to a version that predates a breaking change upstream. Revisit each when
+# its linked upstream issue is resolved and the CI runner images move on.
+dependency_overrides:
+  # flutter_plugin_android_lifecycle 2.0.34 migrated its android/build.gradle
+  # to Kotlin DSL (build.gradle.kts) and reads `flutter.compileSdkVersion`
+  # from the `flutter` extension. Kotlin DSL resolves that reference at
+  # *script-compile* time, and our settings.gradle.kts uses the modern
+  # `dev.flutter.flutter-plugin-loader` (not the classic apply-from
+  # setup), so the `flutter` extension the root build.gradle.kts injects
+  # into subprojects isn't visible to the plugin's own script compiler —
+  # only to Groovy's dynamic lookup. Result: every Android build fails with
+  # "Unresolved reference: compileSdkVersion" in this plugin's build file.
+  # 2.0.33 is the last release still on the working Groovy build script.
+  # Tracking: https://github.com/flutter/flutter/issues/184133
+  flutter_plugin_android_lifecycle: 2.0.33
+
+  # device_info_plus 12.4.0+ added an `isiOSAppOnVision` property backed by
+  # an NSProcessInfo selector that only exists in the iOS 26.1 SDK. Our iOS
+  # workflow builds on macos-14 / Xcode 15.4 (pinned there because newer
+  # Xcode images dropped alongside Flutter versions this app can't yet
+  # move to — see the Flutter version note in .github/workflows/ios.yml),
+  # whose SDK doesn't declare that selector, so Xcode fails with
+  # "No visible @interface for 'NSProcessInfo' declares the selector
+  # 'isiOSAppOnVision'". 12.3.0 is the last release before that property
+  # was added. A runtime-guarded fix has been proposed upstream but is not
+  # in a published release yet.
+  # Tracking: https://github.com/fluttercommunity/plus_plugins/pull/3812
+  device_info_plus: 12.3.0
 
 flutter:
   uses-material-design: true
