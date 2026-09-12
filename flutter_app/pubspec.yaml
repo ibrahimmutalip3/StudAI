@@ -41,6 +41,15 @@ dependencies:
   # though core.dart's public docs still list that API. 32.2.4 is the
   # version this was last verified working against — bump deliberately,
   # not automatically, and re-verify the license call still resolves.
+  #
+  # NOTE: pinning syncfusion_flutter_pdfviewer alone isn't enough — its
+  # platform-interface and platform-implementation siblings
+  # (syncfusion_pdfviewer_platform_interface, _web, _windows, _macos,
+  # _linux) are separate pub packages with their own independent version
+  # numbers, and without an explicit pin here pub resolved them to 32.2.9
+  # regardless, reintroducing the same mismatch. All federated siblings
+  # are pinned together below via dependency_overrides so the whole family
+  # stays on one consistent version.
   syncfusion_flutter_pdfviewer: 32.2.4
   syncfusion_flutter_core: 32.2.4
 
@@ -106,23 +115,42 @@ dev_dependencies:
   flutter_launcher_icons: ^0.14.3
 
 # --- CI build compatibility pins -------------------------------------------
-# Both overrides below hold back a *transitive* dependency (pulled in by
-# share_plus / connectivity_plus / image_picker, not listed directly above)
-# to a version that predates a breaking change upstream. Revisit each when
-# its linked upstream issue is resolved and the CI runner images move on.
+# SYSTEMIC ISSUE, not a one-off: many first-party Flutter plugins are mid
+# -migration from Groovy (android/build.gradle) to Kotlin DSL
+# (android/build.gradle.kts), and their new .kts files read
+# `compileSdk = flutter.compileSdkVersion`. That `flutter` extension is only
+# ever added to the *app* module by the real Flutter Gradle plugin. Our
+# settings.gradle.kts uses the modern `dev.flutter.flutter-plugin-loader`
+# (not the legacy apply-from setup), so library subprojects never get a real
+# one. The workaround below in this file's `subprojects {}` block injects a
+# look-alike `flutter` extension at *evaluation* time, which Groovy resolves
+# dynamically and happily — but Kotlin DSL scripts are compiled *before* any
+# of that runs, so `flutter.compileSdkVersion` is a compile-time
+# "Unresolved reference" for any plugin that has made the Kotlin DSL switch.
+# There is currently no general fix that doesn't involve either (a) pinning
+# each affected plugin to its last Groovy release below, or (b) migrating
+# this whole project to Flutter's built-in-Kotlin Gradle setup (a larger,
+# separate change — see https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin).
+# When a *new* plugin hits this (error message: "Unresolved reference:
+# compileSdkVersion" pointing at some other package's build.gradle.kts),
+# check that package's pub.dev changelog for a "Groovy to Kotlin" entry and
+# add an override here pinned to the release just before it.
 dependency_overrides:
-  # flutter_plugin_android_lifecycle 2.0.34 migrated its android/build.gradle
-  # to Kotlin DSL (build.gradle.kts) and reads `flutter.compileSdkVersion`
-  # from the `flutter` extension. Kotlin DSL resolves that reference at
-  # *script-compile* time, and our settings.gradle.kts uses the modern
-  # `dev.flutter.flutter-plugin-loader` (not the classic apply-from
-  # setup), so the `flutter` extension the root build.gradle.kts injects
-  # into subprojects isn't visible to the plugin's own script compiler —
-  # only to Groovy's dynamic lookup. Result: every Android build fails with
-  # "Unresolved reference: compileSdkVersion" in this plugin's build file.
-  # 2.0.33 is the last release still on the working Groovy build script.
+  # 2.0.33 is the last release still on the working Groovy build script;
+  # 2.0.34 switched to build.gradle.kts.
   # Tracking: https://github.com/flutter/flutter/issues/184133
   flutter_plugin_android_lifecycle: 2.0.33
+
+  # image_picker_android switched to build.gradle.kts at some point after
+  # 0.8.13+17 (the version that was failing) — 0.8.13+14 is a known-good
+  # Groovy release used successfully elsewhere in the community for this
+  # exact issue.
+  image_picker_android: 0.8.13+14
+
+  # path_provider_android 2.2.23 switched to build.gradle.kts (see its
+  # pub.dev changelog: "Updates build files from Groovy to Kotlin").
+  # 2.2.22 is the last Groovy release.
+  path_provider_android: 2.2.22
 
   # device_info_plus 12.4.0+ added an `isiOSAppOnVision` property backed by
   # an NSProcessInfo selector that only exists in the iOS 26.1 SDK. Our iOS
@@ -136,6 +164,15 @@ dependency_overrides:
   # in a published release yet.
   # Tracking: https://github.com/fluttercommunity/plus_plugins/pull/3812
   device_info_plus: 12.3.0
+
+  # Federated-plugin siblings of syncfusion_flutter_pdfviewer (see the
+  # comment by that dependency above) — pinned to the same 32.2.4 so pub
+  # can't resolve them independently to a newer, mismatched patch.
+  syncfusion_pdfviewer_platform_interface: 32.2.4
+  syncfusion_pdfviewer_web: 32.2.4
+  syncfusion_pdfviewer_windows: 32.2.4
+  syncfusion_pdfviewer_macos: 32.2.4
+  syncfusion_pdfviewer_linux: 32.2.4
 
 flutter:
   uses-material-design: true
